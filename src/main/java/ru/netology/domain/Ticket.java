@@ -1,7 +1,6 @@
 package ru.netology.domain;
 
 import lombok.AllArgsConstructor;
-import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @NoArgsConstructor
@@ -11,7 +10,7 @@ public class Ticket implements Comparable<Ticket> {
     private int price;
     private String from;
     private  String to;
-    private  int time;
+    private int time;
 
 
         @Override
@@ -19,10 +18,11 @@ public class Ticket implements Comparable<Ticket> {
             return price - o.price;
         }
 
-    public Ticket(int price, String from, String to) {
+    public Ticket(int price, String from, String to, int time) {
         this.price = price;
         this.from = from;
         this.to = to;
+        this.time = time;
     }
 
     public int getId() {
@@ -63,6 +63,17 @@ public class Ticket implements Comparable<Ticket> {
 
     public void setTime(int time) {
         this.time = time;
+    }
+
+    @Override
+    public String toString() {
+        return "Ticket{" +
+                "id=" + id +
+                ", price=" + price +
+                ", from='" + from + '\'' +
+                ", to='" + to + '\'' +
+                ", time=" + time +
+                '}';
     }
 }
 
