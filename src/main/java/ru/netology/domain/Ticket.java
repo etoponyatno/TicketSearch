@@ -19,6 +19,12 @@ public class Ticket implements Comparable<Ticket> {
             return price - o.price;
         }
 
+    public Ticket(int price, String from, String to) {
+        this.price = price;
+        this.from = from;
+        this.to = to;
+    }
+
     public int getId() {
         return id;
     }
